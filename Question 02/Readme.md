@@ -8,7 +8,7 @@ User authentication for personalized experiences
 
 Getting Started
 Clone the repository.
-Navigate to the folder directory.
+Navigate to the "Question 02" directory.
 Set up your Django environment.
 Run the application.
 

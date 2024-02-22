@@ -1,0 +1,76 @@
+*{
+    padding:0;
+    margin:0;
+    /* text-align: center; */
+}
+
+body{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: rgb(14, 29, 39);
+}
+
+.calculator{
+    width: 60%;
+    margin:auto;
+    margin-top: 300px;
+    border:1px solid #000;
+    display: block;
+    background-color: rgb(102, 28, 71);
+}
+
+.fields {
+    margin-top: 10px;
+    margin-left: 10px;
+    /* display: flex;
+    align-items: center; Align items vertically in the center */
+}
+
+#result{
+    display: none;
+}
+
+#result{
+    display: none;
+}
+
+.cal-buttons{
+    text-align: center;
+}
+
+.cal-buttons button{
+    width:100px;
+    height:30px;
+    background-color: rgb(78, 170, 170);
+    margin:5px;
+}
+
+#reset{
+    width:200px;
+    height:30px;
+    margin-bottom: 20px;;
+    background-color: rgb(167, 25, 25);
+}
+
+/* Media Queries for responsiveness */
+@media only screen and (max-width: 600px) {
+    .calculator {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .fields {
+        margin: 5px;
+    }
+    
+    .cal-buttons button {
+        width: 80px;
+        font-size: 12px;
+    }
+    
+    #reset {
+        width: 150px;
+    }
+}

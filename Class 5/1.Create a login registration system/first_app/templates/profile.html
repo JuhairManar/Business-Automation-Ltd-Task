@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+
+{% if messages %}
+{% for m in messages %}
+<h1 style="color:aqua">{{m}}</h1>
+{% endfor %}
+{% endif %}
+
+
+<h1>Welcome to Profile Page {{user}}</h1>
+
+<a href="{% url 'pass_change' %}">Change Password</a>
+<br>
+<a href="{% url 'change_data' %}">Change your info</a>
+
+{% endblock %}

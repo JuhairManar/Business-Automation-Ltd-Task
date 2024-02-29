@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Signup{% endblock %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+<h1>Welcome to Signup Page</h1>
+
+{% load crispy_forms_tags %}
+
+<div style="margin:auto;width:70%">
+    <form method="POST" style="width:50%;margin:auto">
+      {% csrf_token %} 
+      {% comment %}
+      {{form|crispy}}
+      {% endcomment %}
+      <!-- {{form|crispy}} -->
+      {% for fm in form %}
+      {{fm.label_tag}}
+      {{fm}}
+      {{fm.errors|striptags}}
+      <br>
+      {% endfor %}
+      <button class="btn btn-primary" type="submit">Submit</button>
+      <br>
+      <small>Already have an account ? <a href="{% url 'login' %}">login</a></small>
+    </form>
+  </div>
+{% endblock %}
+

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Retrieve the button and the div elements
-    let buttonFour = document.getElementById('one');
+    let buttonFour = document.getElementById('four');
     let divFour = document.getElementsByTagName('div')[0];
 
     // Add a click event listener to the button

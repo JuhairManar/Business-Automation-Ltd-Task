@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Person List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+</head>
+<body>
+    <h1>Person List</h1>
+    <table id="person_table" class="display" style="width:100%; border-collapse: collapse;">
+        <thead>
+            <tr style="text-align: left;">
+                <th style="border: 1px solid black;">Name</th>
+                <th style="border: 1px solid black;">Email</th>
+                <th style="border: 1px solid black;">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for person in people %}
+            <tr>
+                <td style="border: 1px solid black;">{{ person.name }}</td>
+                <td style="border: 1px solid black;">{{ person.email }}</td>
+                <td style="border: 1px solid black;">{{ person.get_status_display }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- <button id="download-pdf">Download PDF</button> -->
+
+    <script>
+        $(document).ready(function () {
+            $('#person_table').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'pdfHtml5'
+                ]
+            });
+
+            $('#download-pdf').on('click', function () {
+                $('#person_table').DataTable().button('.buttons-pdf').trigger();
+            });
+        });
+    </script>
+</body>
+</html>
